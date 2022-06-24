@@ -28,7 +28,7 @@ The code found here is a part of my blog on using "Infrastructure as Code" with 
  Clone this repository into any folder of your choice
 
 * Be sure to edit the variables in terraform.tfvars (currently it has bogus values)
-* If you are placing this into any other region than us-west-1, you will have to change the AMI ID in the file "asg.tf". 
+* If you are placing this into any other region than us-west-1, you will have to change the AMI ID for our NAT instances in the file "vpc.tf". 
 * In your terminal, goto the VPC folder and execute the following commands:
 
    1. `Terraform init`
