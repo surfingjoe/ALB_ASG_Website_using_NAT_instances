@@ -9,7 +9,7 @@ terraform {
 # ----------  Store Terraform Backend in S3 Bucket --------
 terraform {
   backend "s3" {
-    bucket = "surfingjoes-terraform-states"
+    bucket = "unique name-terraform-state"
     key    = "terraform.tfstate"
     region = "us-west-1"
   }
