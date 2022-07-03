@@ -1,0 +1,7 @@
+your_name    = "Your Name"
+ssh_location = "1.2.3.4/32"
+environment  = "Test"
+key          = "EC2 Key name"
+region       = "us-west-1"
+av-zone1     = "us-west-1a"
+av-zone2     = "us-west-1c"
