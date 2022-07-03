@@ -1,0 +1,7 @@
+your_name    = "Joe"
+ssh_location = "172.89.66.78/32"
+environment  = "Test"
+key          = "Mykey"
+region       = "us-west-1"
+av-zone1     = "us-west-1a"
+av-zone2     = "us-west-1c"
