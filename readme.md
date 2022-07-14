@@ -10,10 +10,11 @@ The code found here is a part of my blog on using "Infrastructure as Code" with 
 * use Terraform to deploy an Auto Scaling Group and an Application Load Balancer in AWS
 * Load balancing a simple website that displays the EC2 host you are connected to in AWS
 
-### The Simple HTML code that shows which EC2 instance you've been connected
-I have created a simple bit of HTML, with some IAM magic that displays some EC2 Instance information.
-Connecting to a load balancer, the load balancer will route to one of the auto-scaled 
-web servers.  The EC2 details wil show which instance you've been connected via the load balancer and will look like the following image.
+### Auto-scaled web pages using simple HTML code that shows which EC2 instance you've been connected
+I have created a bit of HTML, with some IAM magic that displays the EC2 information of the server a user is connect thru a load balancer.
+Connecting to a load balancer, the load balancer will route a user to one of the auto-scaled web servers.  
+
+The EC2 details wil show which instance you've been connected via the load balancer and will look similar to the following image;
 
 ![](Simple Webpage.png)
 ## Requirements
