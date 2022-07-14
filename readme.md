@@ -3,7 +3,7 @@
 ## Using Terraform to deploy the infrastructure
 The code found here is a part of my blog on using "Infrastructure as Code" with Terraform.  I'm writing different exercises on how to use Terraform to create AWS deployments in my WordPress site.  See [Deploying an Auto Scaling Group and Application Load Balancer in AWS](https://josephomara.com/2022/06/23/use-terraform-to-deploy-an-application-load-balancer-in-aws-with-an-auto-scaling-group/(opens in a new tab))
 
-![](Load Balancedand scalable Simple Website.jpg)
+![](https://github.com/surfingjoe/ALB_ASG_Website_using_NAT_instances/blob/master/Load%20Balancedand%20scalable%20Simple%20Website.jpg)
 
 ## Features
 * Using Terraform to deploy infrastructure [Why use Infrastructure as Code](https://josephomara.com/2021/08/23/why-infrastructure-as-code/(opens in a new tab))
@@ -38,7 +38,7 @@ web servers.  The EC2 details wil show which instance you've been connected via 
 * Be sure to update VPC.tf S3 bucket information for Terraform Remote State
 * If you are placing this into any other region than us-west-1, you will have to change the AMI ID for the NAT instances in the file "vpc.tf", to an appropriate NAT image for the region.  As well change the region data in terraform.tfvars file.
 
- 
+
 * In your terminal, goto the folder where you've placed this code and execute the following commands:
 
    1. `Terraform init`
