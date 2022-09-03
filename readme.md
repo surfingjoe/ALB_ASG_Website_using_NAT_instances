@@ -37,8 +37,6 @@ The EC2 details wil show which instance you've been connected via the load balan
 
 * Be sure to edit the variables in terraform.tfvars (currently it has bogus values)
 * Be sure to update VPC.tf S3 bucket information for Terraform Remote State
-* If you are placing this into any other region than us-west-1, you will have to change the AMI ID for the NAT instances in the file "vpc.tf", to an appropriate NAT image for the region.  As well change the region data in terraform.tfvars file.
-
 
 * In your terminal, goto the folder where you've placed this code and execute the following commands:
 
@@ -46,5 +44,6 @@ The EC2 details wil show which instance you've been connected via the load balan
    2. `terraform validate`
    3. `Terraform apply`
 
+Don't forget to clean up your Terraform deployment using "terraform destroy" once you are satisfied with this exercise
 
 
