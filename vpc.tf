@@ -21,6 +21,17 @@ provider "aws" {
 }
 data "aws_region" "current" {}
 
+# ---  Get an AMI to use for NAT instance -------------
+data "aws_ami" "amazon_nat" {
+  most_recent = true
+  owners      = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["amzn-ami-vpc-nat*"]
+  }
+}
+
 # ------------------ Create the VPC -----------------------
 resource "aws_vpc" "my-vpc" {
   cidr_block           = var.vpc_cidr
@@ -125,7 +136,8 @@ resource "aws_subnet" "private-2" {
 
 # --------------- Setup NAT for Private Subnet traffic --------------------
 resource "aws_instance" "nat" {
-  ami = "ami-084f9c6fa14e0b9a5" # AWS NAT instance Publish date: 2022-05-04 
+  ami                         = data.aws_ami.amazon_nat.id
+  #ami = "ami-084f9c6fa14e0b9a5" # AWS NAT instance Publish date: 2022-05-04 
   # ami                         =ami-0fc6e648a0387fde1 # AWS NAT instance Publish date: 2022-06-13
   instance_type               = var.instance_type
   subnet_id                   = aws_subnet.public-1.id
@@ -144,7 +156,8 @@ resource "aws_instance" "nat" {
 }
 # --------------- Setup NAT for Private Subnet 2 traffic ------------------
 resource "aws_instance" "nat2" {
-  ami = "ami-084f9c6fa14e0b9a5" # AWS NAT instance Publish date: 2022-05-04 
+  ami                         = data.aws_ami.amazon_nat.id
+  # ami = "ami-084f9c6fa14e0b9a5" # AWS NAT instance Publish date: 2022-05-04 
   # ami                         =ami-0fc6e648a0387fde1 # AWS NAT instance Publish date: 2022-06-13
   instance_type               = var.instance_type
   subnet_id                   = aws_subnet.public-2.id
